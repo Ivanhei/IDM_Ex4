@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 class Die {
 	private int faceValue;
@@ -8,6 +9,18 @@ class Die {
 	public void roll() {faceValue = (int)(Math.random() * 6 + 1);}
 }
 
+<<<<<<< HEAD
+=======
+class Player {
+	private String name;
+
+	Player(String name) {
+		this.name = name;
+	}
+
+	public String getName() {return this.name;}
+}
+>>>>>>> experimental
 
 public class DiceGame {
 	private int sum;
@@ -29,6 +42,12 @@ public class DiceGame {
 	}
 
 	public static void main(String args[]) {
+		System.out.println("What is your name?");
+		Scanner in = new Scanner(System.in);
+		String name = in.next();
+		Player player1 = new Player(name);
+		System.out.println("Hello, " + player1.getName() + "!");
+
 		System.out.println("Rolling the dice...");
 		DiceGame playGame = new DiceGame();
 		playGame.play();
