@@ -9,8 +9,8 @@ class Die {
 	public void roll() {faceValue = (int)(Math.random() * 6 + 1);}
 }
 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 class Player {
 	private String name;
 
@@ -20,7 +20,7 @@ class Player {
 
 	public String getName() {return this.name;}
 }
->>>>>>> experimental
+//>>>>>>> experimental
 
 public class DiceGame {
 	private int sum;
@@ -55,7 +55,7 @@ public class DiceGame {
 		System.out.println("Die 2: " + playGame.die2.getFaceValue());
 		System.out.println("Total value: " + playGame.getSum());
 
-		if(playGame.getSum() > 7) System.out.println("You won!");
-		else System.out.println("You lost!");
+		if(playGame.getSum() > 7) System.out.println(player1.getName() + " won!");
+		else System.out.println(player1.getName() + " lost!");
 	}
 }
