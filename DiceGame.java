@@ -1,31 +1,34 @@
 import java.util.Random;
 
-class RollDice {
-	private int value;
+class Die {
+	private int faceValue;
 
-	public RollDice() {
-		value = (int)(Math.random() * 6 + 1);
-	}
+	public int getFaceValue() {return faceValue;}
 
-	public int getValue() {return value;}
+	public void roll() {faceValue = (int)(Math.random() * 6 + 1);}
 }
+
 
 public class DiceGame {
 	private int sum;
-	RollDice die1, die2;
+	Die die1, die2;
+
 	public DiceGame() {
-		die1 = new RollDice();
-		die2 = new RollDice();
-		sum = die1.getValue() + die2.getValue();
+		die1 = new Die();
+		die2 = new Die();
 	}
 
-	public int getSum() {return sum;}
+	public void play() {
+		die1.roll();
+		die2.roll();
+	}
 
 	public static void main(String args[]) {
 		System.out.println("Rolling the dice...");
-		DiceGame player = new DiceGame();
-		System.out.println("Die 1: " + player.die1.getValue());
-		System.out.println("Die 2: " + player.die2.getValue());
-		System.out.println("Total value: " + player.getSum());
+		DiceGame playGame = new DiceGame();
+		playGame.play();
+		System.out.println("Die 1: " + playGame.die1.getFaceValue());
+		System.out.println("Die 2: " + playGame.die2.getFaceValue());
+		System.out.println("Total value: " + (playGame.die1.getFaceValue()+playGame.die2.getFaceValue()));
 	}
 }
